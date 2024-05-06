@@ -13,6 +13,7 @@ export const useCalcModel = defineStore('calc', () => {
         const decimalLength = Number.isInteger(value)
             ? 0
             : value.toString().split('.')[1]?.length || 0
+        // .で文字列を分割し、そのうち小数点部分の長さを取得
 
         if (decimalLength >= 4) {
             return Math.round(value * 1000) / 1000 // 小数点が4桁以上の場合数値を四捨五入
@@ -24,8 +25,7 @@ export const useCalcModel = defineStore('calc', () => {
     }
 
     const setDisplayNum = (value: number) => {
-        const formattedValue = formatLength(value)
-        displayNum.value = formattedValue
+        displayNum.value = value
         inputNum.value = 0
     }
 
@@ -85,7 +85,7 @@ export const useCalcModel = defineStore('calc', () => {
     const clearNum = () => {
         setDisplayNum(0)
         resetFomula()
-        inputNum.value = 0
+        setMode(0)
     }
 
     return {
