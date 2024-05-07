@@ -64,10 +64,10 @@ export const useCalcModel = defineStore('calc', () => {
         if (inputNum.value !== 0) {
             formula.value.push(inputNum.value.toString())
             // 現在入力されている数値も計算式に入れる
-        } else if (formula.value.length >= 1) {
-            formula.value.pop()
-            // 演算子が最後になる可能性が高いので削除
-        }
+        } //else if (formula.value.length >= 1) {
+        // formula.value.pop()
+        // 演算子が最後になる可能性が高いので削除
+        // }
 
         const joinedFormula = formula.value.join('')
         // 配列を連結
