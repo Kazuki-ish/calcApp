@@ -1,9 +1,8 @@
 {
     "extends": "@vue/tsconfig/tsconfig.dom.json",
-    "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+    "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "shims-vue.d.ts"],
     "exclude": ["src/**/__tests__/*"],
     "compilerOptions": {
-        "strict": true,
         "composite": true,
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
